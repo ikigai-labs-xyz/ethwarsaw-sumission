@@ -1,0 +1,8 @@
+{
+	"filter_paths": "modules",
+	"solc_remaps": [
+		"ds-test/=modules/forge-std/lib/ds-test/src/",
+		"forge-std/=modules/forge-std/src/",
+		"openzeppelin-contracts/=modules/openzeppelin-contracts/"
+	]
+}

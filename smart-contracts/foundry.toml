@@ -1,0 +1,43 @@
+[fmt]
+bracket_spacing = true
+int_types = "long"
+line_length = 120
+multiline_func_header = "all"
+number_underscore = "thousands"
+quote_style = "double"
+tab_width = 4
+wrap_comments = true
+
+[profile.default]
+contracts = "contracts"       # The source directory
+test = "test"                 # The test directory
+script = "script"             # The script directory
+broadcast = "broadcast"       # The broadcast transaction logs directory
+cache_path = "cache"          # The block data cache directory
+out = "artifacts"             # The compilation output directory
+libs = ["modules"]            # A list of library directories
+cache = true                  # Enable caching block data
+solc_version = "0.8.19"       # Override for the solc version (ignores `auto_detect_solc`)
+optimizer = true              # Enable the solc optimizer
+bytecode_hash = "none"        # Do not include the metadata hash
+optimizer_runs = 10_000       # The number of optimizer runs
+verbosity = 3                 # The verbosity of tests
+auto_detect_remappings = true # Automatically try to auto-detect remappings by scanning the library directories
+force = false                 # Running build does not discard the cache
+evm_version = "london"        # The EVM version to use during tests
+gas_reports = ["*"]           # The contracts to print gas reports for
+ignored_error_codes = []      # A list of compiler errors to ignore during build
+ffi = false                   # Disable the ffi cheatcode
+fuzz = { runs = 1_000 }       # The amount of fuzz runs to perform for each fuzz test case
+fs_permissions = [{ access = "read", path = "./artifacts"}]
+
+[profile.ci]
+optimizer = false
+fuzz = { runs = 10_000 }
+verbosity = 4
+ignored_error_codes = ["license", "code-size"]
+
+[rpc_endpoints]
+mantle = "https://rpc.testnet.mantle.xyz"
+
+# See more config options https://github.com/foundry-rs/foundry/tree/master/config
