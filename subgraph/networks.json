@@ -1,0 +1,8 @@
+{
+  "goerli": {
+    "CircuitBreaker": {
+      "address": "0xd6a4245efD8e2b0518A2aDd1693fbE28d82a4642",
+      "startBlock": 9625436
+    }
+  }
+}

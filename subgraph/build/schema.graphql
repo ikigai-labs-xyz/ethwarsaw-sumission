@@ -1,0 +1,13 @@
+type Protocol @entity(immutable: true) {
+	id: ID!
+	status: Boolean!
+	value: ParameterValue!
+	historicalValues: [ParameterValue!] @derivedFrom(field: "protocol")
+}
+
+type ParameterValue @entity(immutable: true) {
+	id: ID!
+	protocol: Protocol! @derivedFrom(field: "value")
+	value: BigInt!
+	blockNumber: BigInt!
+}

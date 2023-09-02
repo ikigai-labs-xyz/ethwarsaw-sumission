@@ -1,0 +1,225 @@
+[
+  {
+    "inputs": [],
+    "name": "CircuitBreaker__CannotHaveNegativeParameter",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CircuitBreaker__InvalidBlockInterval",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CircuitBreaker__InvalidConfigValues",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CircuitBreaker__InvalidCooldownPeriod",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CircuitBreaker__InvalidThresholdValue",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "bool",
+        "name": "newStatus",
+        "type": "bool"
+      }
+    ],
+    "name": "CircuitBreakerStatusUpdate",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "newParameter",
+        "type": "uint256"
+      }
+    ],
+    "name": "ParameterChanged",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "decreaseAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "decreaseParameter",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "getCircuitBreakerStatusOf",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "getParameterOf",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "getSecurityParameterConfigOf",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "increaseAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "increaseParameter",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bool",
+        "name": "newStatus",
+        "type": "bool"
+      }
+    ],
+    "name": "setCircuitBreakerStatus",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "newParameter",
+        "type": "uint256"
+      }
+    ],
+    "name": "setParameter",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "thresholdPercentage",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint256",
+        "name": "blockInterval",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "startParameter",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "cooldownPeriod",
+        "type": "uint256"
+      }
+    ],
+    "name": "setUserConfig",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

@@ -1,0 +1,27 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: CircuitBreaker
+    network: goerli
+    source:
+      address: "0xd6a4245efD8e2b0518A2aDd1693fbE28d82a4642"
+      abi: CircuitBreaker
+      startBlock: 9625436
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - CircuitBreakerStatusUpdate
+        - ParameterChanged
+      abis:
+        - name: CircuitBreaker
+          file: ./abis/CircuitBreaker.json
+      eventHandlers:
+        - event: CircuitBreakerStatusUpdate(indexed address,indexed bool)
+          handler: handleCircuitBreakerStatusUpdate
+        - event: ParameterChanged(indexed address,indexed uint256)
+          handler: handleParameterChanged
+      file: ./src/circuit-breaker.ts
